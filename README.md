@@ -1,98 +1,226 @@
-# Hydrogen template: Skeleton
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **minimal setup** of components, queries and tooling to get started with Hydrogen.
+<title>SMARTTECHUPHOLSTRY | Automotive Upholstery & Interior Customization</title>
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/hydrogen-template)
+<meta name="description" content="SMARTTECHUPHOLSTRY - Automotive Upholstery & Interior Customization in Eldoret, Kenya. Your Car. Our Craft.">
 
-- [Check out Hydrogen docs](https://shopify.dev/custom-storefronts/hydrogen)
-- [Get familiar with Remix](https://remix.run/docs/)
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-## What's included
+html{
+    scroll-behavior:smooth;
+}
 
-- Remix 2
-- Hydrogen
-- Shopify CLI
-- Configured deployment to Netlify, with Server-Side Rendering (SSR) via [Netlify Edge
-  Functions](https://docs.netlify.com/edge-functions/overview/)
-- ESLint
-- Prettier
-- GraphQL generator
-- TypeScript and JavaScript flavors
-- Minimal setup of components and routes
+body{
+    font-family:Arial, sans-serif;
+    background:#fff;
+    color:#111;
+    line-height:1.6;
+}
 
-## Getting started
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
 
-We highly recommend using this template to deploy a Hydrogen site to Netlify.
+/* HEADER */
 
-**Requirements:**
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    background:#050505;
+    border-bottom:1px solid #c9a227;
+}
 
-- Node.js version 18.0.0 or higher
-- Netlify CLI 17.0.0 or higher
+nav{
+    min-height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-```bash
-npm install -g netlify-cli@latest
-```
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+    text-decoration:none;
+}
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/hydrogen-template)
+.logo-symbol{
+    width:45px;
+    height:45px;
+    border:2px solid #d4af37;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#d4af37;
+    font-size:30px;
+    font-weight:bold;
+    font-style:italic;
+}
 
-To create a new project, either click the "Deploy to Netlify" button above, or run the following command:
+.logo-text strong{
+    display:block;
+    font-size:15px;
+    letter-spacing:1px;
+}
 
-```bash
-npm create @shopify/hydrogen@latest -- --template https://github.com/netlify/hydrogen-template
-```
+.logo-text small{
+    display:block;
+    color:#d4af37;
+    letter-spacing:3px;
+    font-size:9px;
+}
 
-Then follow the instructions in `.env.example` and you're ready to start developing.
+.nav-links{
+    display:flex;
+    gap:25px;
+}
 
-## Local development
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+}
 
-```bash
-npm run dev
-```
+.nav-links a:hover{
+    color:#d4af37;
+}
 
-## Building for production
+.quote-button{
+    border:1px solid #d4af37;
+    padding:10px 16px;
+    color:#d4af37 !important;
+}
 
-```bash
-npm run build
-```
+.menu{
+    display:none;
+    color:#fff;
+    font-size:28px;
+}
 
-## FAQ and Troubleshooting
+/* HERO */
 
-## How do I configure my Hydrogen session / storefront client / customer account client / cart handler?
+.hero{
+    min-height:750px;
+    padding-top:75px;
+    display:flex;
+    align-items:center;
+    background:
+        linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+}
 
-See `app/lib/context.ts` and the Hydrogen documentation.
+.hero-content{
+    color:white;
+    max-width:800px;
+}
 
-## How do I augment the Remix context?
+.eyebrow{
+    color:#d4af37;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
 
-Add your custom context to the object returned by the `createAppLoadContext` function in
-`app/lib/context.ts` and ensure the return type is updated (e.g. `HydrogenContext & {foo: string}`).
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:clamp(50px,8vw,90px);
+    line-height:1;
+}
 
-### How do I configure a real Shopify store in local dev?
+.hero h1 span{
+    color:#d4af37;
+}
 
-See `.env.example` and
-[these Shopify instructions](https://shopify.dev/docs/storefronts/headless/building-with-the-storefront-api/getting-started).
+.hero p{
+    max-width:650px;
+    margin:25px 0;
+    color:#ddd;
+    font-size:18px;
+}
 
-### I get a 500 error on the `/accounts` pages. How do I configure real Shopify customer accounts in local dev?
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-See [these Shopify instructions](https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/hydrogen).
+.btn{
+    display:inline-block;
+    padding:14px 24px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:13px;
+    border-radius:4px;
+}
 
-### Static assets not loading in local dev
+.gold{
+    background:#d4af37;
+    color:#000;
+}
 
-If your `.js` and `.css` files are failing to load in local development (with 404 responses), you
-may be running into an issue that occurs when `netlify dev` is run after having run a build (via
-`netlify build`, `netlify serve`, `npm run build`, or `remix vite:build`). This is a known issue
-that Netlify is working on.
+.outline{
+    border:1px solid #d4af37;
+    color:#fff;
+}
 
-To fix this, delete the conflicting built functions before running your dev server:
+.badges{
+    margin-top:30px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    color:#ddd;
+    font-size:12px;
+}
 
-```bash
-rm -rf .netlify/edge-functions*
-npm run dev
-```
+/* STRIP */
 
-### `shopify hydrogen preview` fails with `Cannot find module '@shopify/mini-oxygen'`
+.strip{
+    background:#111;
+    color:white;
+}
 
-The `shopify hydrogen preview` command has a misleading name. It previews your site in a local
-simulation of the Oxygen hosting platform. It therefore isn't compatible with a site intended to be
-deployed to Netlify.
+.strip-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
 
-Instead, use the [Netlify CLI](https://docs.netlify.com/cli/get-started/) (e.g. `netlify serve`).
+.strip-item{
+    padding:25px;
+    text-align:center;
+    border-right:1px solid #333;
+}
+
+.strip-item strong{
+    color:#d4af37;
+    margin-right:8px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.heading{
+    text-align:center;
+    max-width:700px;
+    margin
